@@ -1,0 +1,125 @@
+Focuses on accelerating prototyping in fast pre-set framework
+> accelerate feedback stage
+> rapid iteration allows to improve faster
+> framework - you loose speed connecting front-end and backend
+
+tricky to have AI product because of non-deterministic nature
+
+Prototype = quick, lightweight, tangible version of an idea
+
+Requires clarity of premises and core value add -> allows to test them 
+
+hypothesis: 
+traditional coding structured around: Planning first > Building second
+with genAI: start with intent: what I want to achieve > what's the fastest way to test
+
+Shift from SOLUTION first to EXPLORATION first
+
+Prototyping space is between idea and full development
+Every app needs:
+
+USER INTERFACE	- Collects inputs from users
+     \/
+    LOGIC	- heart of the app connects input with API
+     \/
+    DATA	- Base to work with
+     \/
+ AI SERVICE	- Heavylifting
+
+
+Difference between prototype and production-ready
+Prototype: aim at testing/learning > priority is speed > code can be messy but functional > data can be small or simulated
+Production ready: for building a complete stable product > focus on architecture/reliability > code should be clean & refactored > true data
+
+Key errors to avoid:
+- overengineering > asking to produce everything in single prompt > keep it modular
+- try to perfect everything before getting feedback
+- have a plan for scaling - add comments, simple names, use known tools - test cases via ai - check extreme cases
+
+Recommendations:
+- be specific in prompting
+- use small dataset when testing
+- read code before running it
+- use version control 
+- don't expect same result every time
+
+
+NOTE: 
+Worth exploring an app to test ideas: finding comps available - cost vs solution - recommend an action point
+
+Course plan:
+1. Streamlit to: load and clean dataset, build interface, visualize results, publish prototype online
+2. Snowflake: upload dockx files, store in structured format, snowflake to analyse, deploy functional app
+3. Connect chatbot to data +RAG/Prompting to get feedback fast
+
+MVP
+Need to start with a clear idea of the min function that solve the problem - do not overbuild
+In our test case could be: find available solutions in the market and compare them
+
+Understanding your audience changes everything
+M - Mission - what is the problem trying to solve (specific) - how do you know if solves the problem (metric)
+A - Audience - Identify your primary user group
+P - Priority - What features are absolutely necessary
+
+To users: if you could only build 1 feature - what would be the most critical?
+Build plan - include:
+
+1. MUST HAVE
+2. NICE TO HAVE
+3. NEXT VERSION
+
+Agile prototyping - https://www.geeksforgeeks.org/software-engineering/agile-prototyping/
+> requires continuous and detailed feedback from users 
+> might not be appropriate for projects with solid and well-defined needs
+> might lead to incomplete prototypes
+> requires cross-functional team
+
+M1L1
+Prototype Case Study
+
+Prompt:
+You are a product manager with experience in building marketing and advertising apps.
+I need help planning an MVP for an app that can write engaging articles to push our company which is a buyer agent based in London and monitor readers reactions.
+My team is short on time and needs a demo for management.
+Please help me outline a build plan in bullet points.
+
+MVP guidelines:
+- Define your end goal (e.g., automate data extraction from clinical documents)
+- Determine your target audience (e.g., potential clients, perspective real estate buyers in London)
+- Identify metrics for success (e.g., time saved, accuracy, reaction to the articles)
+- Prioritize must-have features for the MVP (e.g., complete article writing, ability to comment, analysis of comments, collection of feedback)
+
+
+Key tools:
+- Python
+- Streamlit for interactive apps
+- pre-trained models
+- csv for small dataset
+- .env for secrets
+
+Base directory structure:
+- streamlit.app.py
+- data/data.csv
+- .env
+-requirements.txt
+
+Virtual environment
+python -m venv .venv
+
+Troubleshooting
+- API key errots
+- model name issues
+- surprise charges (use limits)
+- debugging
+- version control
+
+Streamlit allows to create interactive apps including functions (widgets) such as:
+- st.text_input()
+- st.selectbox()
+- st.checkbox()
+- st.button()
+- st.slider()
+- st.file_uploader()
+
+Note the use of @st.cache_data that allows to reuse pre-seen calculations to avoid the need for re-running API 
+
